@@ -9,21 +9,27 @@ const Login = (props) => {
 
     const submitHandler = () => {
         e.preventDefault();
+        setCredentials(credentials); 
+        }
+        
     }
-    const changeHandler = () => {
+    const handleChange = () => {
         e.preventDefault();
+        const name = e.target.name;
+        const value = e.target.value;
+        setCredentials({...state, [name]: value });
     }
     return (
         <div className='login-form'>
             <form onSubmit={submitHandler}>
                 <input
                     type='text'
-                    onChange={changeHandler}
+                    onChange={handleChange}
                     placeholder='username'
                 />
                 <input
                     type='text'
-                    onChange={changeHandler}
+                    onChange={handleChange}
                     placeholder='username'
                 />
                 <button>Create Account</button>
