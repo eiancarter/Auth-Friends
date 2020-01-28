@@ -1,6 +1,8 @@
 import React from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
-import Home from './Home'
+import Home from './Home';
+import Login from './components/Login';
+import PrivateRoute from './components/PrivateRoute';
 import './App.css';
 
 function App() {
@@ -9,9 +11,8 @@ function App() {
       <header className="App-header">
         <div>Hello</div>
         <Switch>
-          <Route>
-            <Home /> 
-          </Route>
+          <Route exact path='/' component={Login} />
+          <PrivateRoute path='/Home' component={Home} />
         </Switch>
       </header>
     </div>
