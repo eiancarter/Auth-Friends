@@ -9,7 +9,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div>Hello</div>
+        <div>
+          <ul>
+            <li><Link to='/'>Login</Link></li>
+            <li><Link to='/Home'>Home</Link></li>
+          </ul>
+        </div>
         <Switch>
           <Route exact path='/' component={Login} />
           <PrivateRoute path='/Home' component={Home} />
