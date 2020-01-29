@@ -1,26 +1,30 @@
 import React, { useState, useEffect} from 'react';
-import { axiosWithAuth } from '../utils/axiosWithAuth';
+import axiosWithAuth from '../utils/axiosWithAuth';
+
+import FriendCard from './FriendCard';
 
 
-const Friends = (props) => {
-    const [friends, setFriends] = useState();
+const Friends = () => {
+    const [friends, setFriends] = useState([]);
 
     useEffect(() => {
-        axiosWithAuth
+        axiosWithAuth()
             .get('/api/friends')
             .then(res => {
                 console.log(res)
-                setFriends({
-                    friends: res.friends
-                })
+                setFriends(
+                    res.data
+                    )
             })
             .catch(err => console.log(err))
     }, [setFriends]);
     return (
         <div>
-            {/* {friends.map( friend => {
-                <div>{friend.name}</div>
-            })} */}
+            {friends.map( friend => (
+                <div key={friend.id}>
+                    <FriendCard friend={friend} />
+                </div>
+            ))}
         </div>
     )
 }

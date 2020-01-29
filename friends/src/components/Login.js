@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import axiosWithAuth from '../utils/axiosWithAuth';
 import { useHistory } from 'react-router-dom';
 
 const Login = (props) => {
@@ -13,8 +13,8 @@ const Login = (props) => {
     const submitHandler = (e) => {
         e.preventDefault();
         setIsLoading(true);
-        axios
-        .post('http://localhost:5000/api/login', credentials)
+        axiosWithAuth()
+        .post('/api/login', credentials)
         .then(res => {
             setIsLoading(false)
             console.log('authentication response', res);
