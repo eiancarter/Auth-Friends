@@ -18,8 +18,8 @@ const Login = (props) => {
         .then(res => {
             setIsLoading(false)
             console.log('authentication response', res);
-            localStorage.setItem('token', res.friends.payload);
-            props.history.push('/Home');
+            localStorage.setItem('token', res.data.payload);
+            history.push('/Home');
         })
         .catch(err => console.log(err));
     }

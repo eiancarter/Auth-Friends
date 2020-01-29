@@ -5,7 +5,7 @@ import { axiosWithAuth } from '../utils/axiosWithAuth';
 const Friends = (props) => {
     const [friends, setFriends] = useState();
 
-    useEffect = () => {
+    useEffect(() => {
         axiosWithAuth
             .get('/api/friends')
             .then(res => {
@@ -15,10 +15,10 @@ const Friends = (props) => {
                 })
             })
             .catch(err => console.log(err))
-    }
+    }, [setFriends]);
     return (
         <div>
-            {/* { friends.map( friend => {
+            {/* {friends.map( friend => {
                 <div>{friend.name}</div>
             })} */}
         </div>
