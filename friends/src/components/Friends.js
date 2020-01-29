@@ -2,6 +2,7 @@ import React, { useState, useEffect} from 'react';
 import axiosWithAuth from '../utils/axiosWithAuth';
 
 import FriendCard from './FriendCard';
+import AddFriend from './AddFriend';
 
 
 const Friends = () => {
@@ -25,6 +26,7 @@ const Friends = () => {
                     <FriendCard friend={friend} />
                 </div>
             ))}
+            <AddFriend />
         </div>
     )
 }
