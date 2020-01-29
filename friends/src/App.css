@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+.navigation ul li {
+  text-decoration: none;
+  color: white;
+}
+
+.friend-card{
+  width: 300px;
+  height: 200px;
+  background: white;
+  color: black;
+  margin-top: 8px;
+}

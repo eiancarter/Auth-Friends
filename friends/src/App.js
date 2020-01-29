@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div>
-          <ul>
+          <ul className='navigation'>
             <li><Link to='/'>Login</Link></li>
             <li><Link to='/Home'>Home</Link></li>
           </ul>

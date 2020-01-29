@@ -21,12 +21,12 @@ const Friends = () => {
     }, [setFriends]);
     return (
         <div>
+            <AddFriend />
             {friends.map( friend => (
                 <div key={friend.id}>
                     <FriendCard friend={friend} />
                 </div>
             ))}
-            <AddFriend />
         </div>
     )
 }
